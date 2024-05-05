@@ -1,0 +1,300 @@
+@use "sass:math";
+
+$defaultTransition:
+    color,
+    background-color,
+    border-color,
+    text-decoration-color,
+    fill,
+    stroke cubic-bezier(0.4, 0, 0.2, 1),
+    400ms;
+
+@function rem($pixels, $context: 16) {
+    @return (math.div($pixels, $context)) * 1rem;
+}
+
+$MEDIA: (
+    m: 320px,
+    xm: 400px,
+    xlm: 475px,
+    sm: 768px,
+    md: 992px,
+    lg: 1024px,
+    xl: 1200px,
+    xll: 1440px,
+    hd: 1920px,
+    xhd: 2560px,
+);
+
+@mixin headerHeight {
+    height: var(--header-height);
+}
+
+@mixin sliderHeaderHeight {
+    height: var(--header-slider-height);
+}
+
+@mixin m {
+    @media (max-width: map_get($MEDIA, m)) {
+        @content;
+    }
+}
+
+@mixin xm {
+    @media (max-width: map_get($MEDIA, xm)) {
+        @content;
+    }
+}
+
+@mixin xlm {
+    @media (max-width: map_get($MEDIA, xlm)) {
+        @content;
+    }
+}
+
+@mixin before-xlm {
+    @media (min-width: map_get($MEDIA, xlm)) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: map_get($MEDIA, sm)) {
+        @content;
+    }
+}
+
+@mixin before-sm {
+    @media (min-width: map_get($MEDIA, sm)) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: map_get($MEDIA, md)) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: map_get($MEDIA, lg)) {
+        @content;
+    }
+}
+
+@mixin before-xl {
+    @media (min-width: map_get($MEDIA, xl)) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: map_get($MEDIA, xl)) {
+        @content;
+    }
+}
+
+@mixin xll {
+    @media (max-width: map_get($MEDIA, xll)) {
+        @content;
+    }
+}
+
+@mixin hd {
+    @media (max-width: map_get($MEDIA, hd)) {
+        @content;
+    }
+}
+
+@mixin xhd {
+    @media (max-width: map_get($MEDIA, xhd)) {
+        @content;
+    }
+}
+
+@mixin iphone14 {
+    @media only screen and (width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+        @content;
+    }
+}
+
+@mixin landscapeMobileL {
+    @media only screen and (max-width: map_get($MEDIA, md)) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin landscapeMobile {
+    @media only screen and (max-width: map_get($MEDIA, sm)) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin iphonePro {
+    @media only screen and (width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
+        @content;
+    }
+}
+
+@mixin iphoneProMax {
+    @media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+        @content;
+    }
+}
+
+@mixin retinaDisplay {
+    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+        @content;
+    }
+}
+
+@mixin retinaDisplayM {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1504px) and (min-height: 842px) and (max-height: 893px),
+        screen and (max-device-pixel-ratio: 2) and (max-width: 1504px) and (min-height: 842px) and (max-height: 893px) {
+        @content;
+    }
+}
+
+@mixin retinaDisplayL {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1800px) and (min-height: 1023px) and (max-height: 1074px),
+        screen and (max-device-pixel-ratio: 2) and (max-width: 1800px) and (min-height: 1023px) and (max-height: 1074px) {
+        @content;
+    }
+}
+
+@mixin retinaDisplayXXL {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 2048px) and (min-height: 1159px) and (max-height: 1228px),
+        screen and (max-device-pixel-ratio: 2) and (max-width: 2048px) and (min-height: 1159px) and (max-height: 1228px) {
+        @content;
+    }
+}
+
+@mixin retinaDisplayXL {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1792px) and (min-height: 999px) and (max-height: 1068px),
+        screen and (max-device-pixel-ratio: 2) and (max-width: 1792px) and (min-height: 999px) and (max-height: 1068px) {
+        @content;
+    }
+}
+
+@mixin scrollAppearance {
+    &::-webkit-scrollbar {
+        width: var(--scroll-width);
+        height: var(--scroll-width);
+    }
+    &::-webkit-scrollbar-track {
+        background-color: var(--clr-gray02);
+        border-radius: 1em;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--clr-border-primary);
+        border-radius: 1em;
+        outline: 0 solid var(--clr-border-primary);
+    }
+}
+
+@mixin textLineEllipsis($lines) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+@keyframes buttonScale {
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes buttonOpacity {
+    0%,
+    50% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    65%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes buttonOpacityBg {
+    0%,
+    65% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0.4;
+    }
+    80%,
+    100% {
+        opacity: 0;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+
+    &[alt] {
+        font-size: 0.7em;
+        font-family: var(--ff-primary);
+    }
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+}

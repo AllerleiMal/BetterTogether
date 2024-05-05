@@ -1,0 +1,160 @@
+@import "common";
+
+:root {
+    --ff-primary: "Be Vietnam Pro Semibold", sans-serif;
+    --ff-secondary: "Bebas Neue", sans-serif;
+    --ff-third: "Anton", sans-serif;
+    --ff-system: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+
+    --z-index-modal: 3000;
+
+    //---Container---//
+    --container-width: #{rem(1160)};
+    --container-width-sidebar: #{rem(300)};
+    --container-min-width: #{rem(360)};
+
+    //---Header---//
+    --header-height: #{rem(52)};
+    --header-slider-height: #{rem(100)};
+    --header-icon: #{rem(90)};
+    --header-image-link: #{rem(140)};
+    --header-bb-counter-cell: #{rem(20)};
+    --header-bb-counter-digit: #{calc(var(--header-bb-counter-cell) / 2.2)};
+    --header-bb-counter-mark: #{calc(var(--header-bb-counter-cell) / 1.2)};
+    @include xl {
+        --header-image-link: #{rem(120)};
+        --container-width: 100%;
+    }
+    @include sm {
+        --header-icon: #{rem(90)};
+        --header-slider-height: #{rem(90)};
+    }
+    @include xlm {
+        --header-image-link: #{rem(100)};
+        --header-bb-counter-cell: #{rem(18)};
+    }
+    @include xm {
+        --header-height: #{rem(40)};
+        --header-slider-height: #{rem(70)};
+        --header-icon: #{rem(70)};
+        --header-bb-counter-cell: #{rem(14)};
+    }
+    @include iphone14 {
+        --header-bb-counter-cell: #{rem(16)};
+    }
+    @include iphonePro {
+        --header-bb-counter-cell: #{rem(16)};
+    }
+
+    //---Profile-page---//
+    --profile-bb-counter-cell: #{rem(50)};
+    --profile-bb-counter-digit: #{calc(var(--profile-bb-counter-cell) / 2.2)};
+    --profile-bb-counter-mark: #{calc(var(--profile-bb-counter-cell) / 1.2)};
+    @include sm {
+        --profile-bb-counter-cell: #{rem(35)};
+    }
+
+    //---Left-Side-menu---//
+    --side-search-size: #{rem(80)};
+    @include xl {
+        --side-search-size: #{rem(60)};
+    }
+
+    //---Burger-menu---//
+    --burger-menu-width: #{rem(94)};
+    --burger-menu-item: #{rem(85)};
+    --burger-menu-icon-size: #{rem(50)};
+    --burger-menu-btn: #{rem(25)};
+
+    //---Scroll---//
+    --scroll-width: #{rem(8)};
+
+    //---Cart-Side-Menu---//
+    --csm-width: #{rem(450)};
+    --csm-spacing: #{rem(10)};
+
+    //---Magic-Widget---//
+    --mw-panel-spacing: #{rem(10)};
+    @include xm {
+        --mw-panel-spacing: #{rem(5)};
+    }
+
+    --mw-content-height: #{rem(260)};
+
+    @include retinaDisplayXXL {
+        font-size: 18px;
+        --mw-content-height: #{rem(365)};
+    }
+    @include retinaDisplayXL {
+        font-size: 16px;
+        --mw-content-height: #{rem(330)};
+    }
+    @include retinaDisplayL {
+        font-size: 16px;
+        --mw-content-height: #{rem(340)};
+    }
+    @include retinaDisplayM {
+        font-size: 16px;
+        --mw-content-height: #{rem(320)};
+    }
+    @include xl {
+        --mw-content-height: #{rem(480)};
+    }
+    @include md {
+        --mw-content-height: #{rem(410)};
+    }
+    @include sm {
+        --mw-content-height: #{rem(380)};
+    }
+    @include xlm {
+        --mw-content-height: #{rem(345)};
+    }
+    @include xm {
+        --mw-content-height: #{rem(275)};
+    }
+    @include iphone14 {
+        --mw-content-height: #{rem(275)};
+    }
+    @include landscapeMobileL {
+        --mw-content-height: #{rem(370)};
+    }
+    @include landscapeMobile {
+        --mw-content-height: #{rem(350)};
+    }
+    @include iphonePro {
+        --mw-content-height: #{rem(270)};
+    }
+    @include iphoneProMax {
+        --mw-content-height: #{rem(300)};
+    }
+
+    //---Magic-Widget-Content--//
+    --mw-panel-header-height: #{rem(40)};
+    @include xl {
+        --mw-panel-header-height: #{rem(50)};
+    }
+    @include sm {
+        --mw-panel-header-height: #{rem(40)};
+    }
+    @include xm {
+        --mw-panel-header-height: #{rem(35)};
+    }
+}
+
+.native-ios {
+    @include xlm {
+        --header-height: #{rem(50)};
+        --header-slider-height: #{rem(95)};
+        --header-icon: #{rem(95)};
+    }
+    @include iphone14 {
+        --mw-content-height: #{rem(330)};
+    }
+    @include iphonePro {
+        --mw-content-height: #{rem(330)};
+    }
+    @include iphoneProMax {
+        --mw-content-height: #{rem(390)};
+    }
+}

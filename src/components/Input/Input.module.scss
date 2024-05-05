@@ -1,0 +1,144 @@
+@import "../../styles/common";
+
+.wrapper {
+    --input-ff: var(--ff-primary);
+    display: flex;
+    flex-direction: column;
+    gap: rem(4);
+    font-family: var(--input-ff);
+
+    @include md {
+        gap: rem(2);
+    }
+}
+
+.inputLabel {
+    font-size: rem(17);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: inherit;
+
+    @include md {
+        font-size: rem(16);
+    }
+
+    @include xlm {
+        font-size: rem(14);
+    }
+}
+
+.inputInput {
+    font-size: rem(14);
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-family: var(--ff-primary);
+
+    &::placeholder {
+        color: inherit;
+        font-size: inherit;
+        opacity: 0.6;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.default {
+    padding: rem(8) rem(12);
+    border-radius: rem(5);
+
+    border: 1px solid var(--clr-border-primary);
+}
+
+.second {
+    --input-fz: #{rem(25)};
+
+    color: var(--clr-text-primary);
+    font-size: var(--input-fz);
+    font-weight: 500;
+    height: rem(50);
+    padding: rem(5) rem(15);
+
+    border: rem(1) solid var(--clr-border-primary);
+    border-radius: 0;
+    background-color: var(--clr-gray04);
+
+    &::placeholder {
+        color: var(--clr-text-primary);
+    }
+
+    @include sm {
+        --input-fz: #{rem(18)};
+        height: rem(40);
+        padding: rem(4) rem(8);
+    }
+
+    @include xlm {
+        --input-fz: #{rem(16)};
+    }
+}
+
+.yellowBorder {
+    font-size: 16px;
+    color: var(--clr-text-primary);
+    background: var(--clr-background-primary);
+    height: 34px;
+    outline: none;
+    transition: 0.3s;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 1px solid var(--clr-primary66);
+
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:focus {
+        transition: $defaultTransition;
+        border: 1px solid var(--clr-primary);
+    }
+
+    &::placeholder {
+        color: var(--clr-text-primary);
+    }
+
+    &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+        &:hover,
+        &:active,
+        &:active:focus,
+        &:focus {
+            border: 1px solid var(clr-primary66);
+        }
+    }
+}
+
+.requiredField {
+    font-size: 15px;
+    color: var(--clr-danger);
+    text-align: left;
+    font-family: var(--ff-primary);
+
+    @include xlm {
+        font-size: 12px;
+    }
+}
+
+.errorBorder {
+    border-color: var(--clr-danger);
+    box-shadow:
+        0px 2px 4px var(--clr-dark50),
+        0px 1px 6px var(--clr-dark80),
+        0 0 0 1px var(--clr-danger);
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:focus {
+        border: 1px solid var(--clr-danger);
+    }
+}

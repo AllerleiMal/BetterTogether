@@ -1,0 +1,19 @@
+.loginFormWrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formInput {
+    width: 200px;
+    height: 30px;
+}
+
+.errorMessage{
+    color: red;
+}
+
+.inputRow {
+    display: flex;
+}

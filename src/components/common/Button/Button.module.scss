@@ -1,0 +1,139 @@
+@import "../../../styles/common";
+
+.button {
+    --btn-fz: #{rem(14)};
+    --btn-ff: var(--ff-primary);
+    --btn-fw: 600;
+    --btn-min-width: 10ch;
+    --btn-min-height: #{rem(35)};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25em;
+    width: fit-content;
+    min-width: var(--btn-min-width);
+    min-height: var(--btn-min-height);
+    font-size: var(--btn-fz);
+    font-family: var(--btn-ff);
+    padding: 0.5em 1em;
+
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: $defaultTransition;
+    text-transform: uppercase;
+
+    @include xlm {
+        --btn-fz: #{rem(12)};
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .buttonText {
+        color: var(--clr-text-primary);
+        font-size: var(--btn-fz);
+        font-weight: var(--btn-fw);
+        font-family: inherit;
+        transition: $defaultTransition;
+    }
+}
+
+.loader {
+    --size: 1em;
+}
+
+.loaderBlack {
+    border-top-color: var(--clr-dark);
+    border-left-color: var(--clr-dark);
+    border-bottom-color: var(--clr-dark);
+}
+
+.yellow {
+    background-color: var(--clr-primary);
+    .buttonText {
+        color: var(--clr-background-primary);
+    }
+}
+
+.yellowOutlined {
+    border: rem(1) solid var(--clr-primary);
+    border-radius: rem(10);
+    background-color: var(--clr-secondary);
+    .buttonText {
+        color: var(--clr-primary);
+    }
+}
+
+.green {
+    background-color: var(--clr-success);
+    .buttonText {
+        color: var(--clr-text-secondary);
+    }
+}
+
+.blue {
+    background-color: var(--clr-blue);
+}
+
+.red {
+    background-color: var(--clr-danger);
+}
+
+.black {
+    background-color: var(--clr-sidepanel);
+    .buttonText {
+        color: var(--clr-text-primary);
+    }
+}
+
+.greySquare {
+    border: rem(1) solid var(--clr-border-primary);
+    border-radius: 0;
+    background-color: var(--clr-light80);
+    height: rem(50);
+
+    @include sm {
+        height: rem(40);
+    }
+
+    .buttonText {
+        position: relative;
+        font-size: rem(20);
+
+        @include sm {
+            font-size: rem(16);
+        }
+
+        &::after {
+            content: "";
+
+            width: 100%;
+            height: rem(2);
+
+            background-color: var(--clr-light);
+
+            position: absolute;
+            bottom: rem(-1);
+            left: 0;
+        }
+    }
+}
+
+.outlined {
+    border: rem(1) solid var(--clr-border-primary);
+    background-color: transparent;
+
+    .buttonText {
+        color: var(--clr-text-primary);
+    }
+}
+
+.transparent {
+    background-color: transparent;
+    border: none;
+}

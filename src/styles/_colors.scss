@@ -1,0 +1,63 @@
+$clr-primary: #f7c521;
+$clr-background-primary: #000000;
+
+$clr-text-primary: #ffffff;
+$clr-text-secondary: #0a0a0a;
+
+$clr-assist-primary: #ffffff;
+$clr-assist-secondary: #000000;
+$clr-success: #06cb06;
+$clr-danger: #ff0a0a;
+$clr-blue: #408eed;
+$clr-purple: #da1695;
+
+:root {
+    --clr-primary: #{$clr-primary};
+    --clr-primary66: #{transparentize($clr-primary, 0.66)};
+    --clr-primary10: #{transparentize($clr-primary, 0.1)};
+
+    --clr-secondary: color-mix(in oklab, #{$clr-background-primary} 80%, #{$clr-assist-primary});
+    --clr-sidepanel: color-mix(in oklab, #{$clr-background-primary} 74%, #{$clr-assist-primary});
+
+    --clr-text-primary: #{$clr-text-primary};
+    --clr-text-primary50: #{transparentize($clr-text-primary, 0.5)};
+    --clr-text-primary01: color-mix(in oklab, #{$clr-text-primary} 60%, #{$clr-background-primary});
+    --clr-text-primary02: color-mix(in oklab, #{$clr-text-primary} 90%, #{$clr-background-primary});
+    --clr-text-secondary: #{$clr-text-secondary};
+
+    --clr-border-primary: color-mix(in oklab, #{$clr-background-primary} 50%, #{$clr-assist-primary});
+    --clr-border75: color-mix(in oklab, #{$clr-background-primary} 67%, #{$clr-assist-primary});
+
+    --clr-gray01: color-mix(in oklab, #{$clr-background-primary} 60%, #{$clr-assist-primary});
+    --clr-gray02: color-mix(in oklab, #{$clr-background-primary} 35%, #{$clr-assist-primary});
+    --clr-gray03: color-mix(in oklab, #{$clr-background-primary} 69%, #{$clr-assist-primary});
+    --clr-gray04: color-mix(in oklab, #{$clr-background-primary} 70%, #{$clr-assist-primary});
+    --clr-gray05: color-mix(in oklab, #{$clr-background-primary} 58%, #{$clr-assist-primary});
+
+    --clr-background-modal: #{transparentize($clr-assist-primary, 0.5)};
+    --clr-background-primary: #{$clr-background-primary};
+    --clr-background-primary50: #{transparentize($clr-background-primary, 0.5)};
+
+    --clr-light: #{$clr-assist-primary};
+    --clr-light50: #{transparentize($clr-assist-primary, 0.5)};
+    --clr-light80: #{transparentize($clr-assist-primary, 0.8)};
+    --clr-light90: #{transparentize($clr-assist-primary, 0.9)};
+    --clr-dark: #{$clr-assist-secondary};
+    --clr-dark50: #{transparentize($clr-assist-secondary, 0.5)};
+    --clr-dark80: #{transparentize($clr-assist-secondary, 0.8)};
+
+    --clr-success: #{$clr-success};
+    --clr-success40: #{transparentize($clr-success, 0.4)};
+
+    --clr-danger: #{$clr-danger};
+    --clr-danger02: color-mix(in oklab, #{$clr-danger} 80%, #{$clr-assist-secondary});
+    --clr-danger03: color-mix(in oklab, #{$clr-danger} 85%, #{$clr-assist-primary});
+    --clr-danger20: #{transparentize($clr-danger, 0.2)};
+
+    --clr-blue: #{$clr-blue};
+    --clr-blue02: color-mix(in oklab, #{$clr-blue} 90%, #{$clr-assist-secondary});
+
+    --clr-purple: #{$clr-purple};
+
+    --swiper-theme-color: #{var(--clr-primary)} !important;
+}

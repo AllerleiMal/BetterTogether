@@ -1,0 +1,60 @@
+@import "../../../styles/common";
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: var(--z-index-modal);
+}
+
+.spinner {
+    /* Spinner size and color */
+    --size: #{rem(30)};
+    --animation-duration: 1s;
+
+    width: var(--size);
+    height: var(--size);
+    border-top-color: var(--clr-primary);
+    border-left-color: var(--clr-primary);
+    border-bottom-color: var(--clr-primary);
+
+    /* Additional spinner styles */
+    animation: spinner var(--animation-duration) linear infinite;
+    border-right-color: transparent;
+    border-style: solid;
+    border-width: calc(var(--size) / 8);
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Animation styles */
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Optional — create your own variations! */
+.small {
+    --size: #{rem(18)};
+}
+.medium {
+    --size: #{rem(30)};
+
+    @include xlm {
+        --size: #{rem(25)};
+    }
+    @include xm {
+        --size: #{rem(20)};
+    }
+}
+.large {
+    --size: #{rem(50)};
+}
